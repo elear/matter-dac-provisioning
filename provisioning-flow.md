@@ -39,7 +39,7 @@ sequenceDiagram
         end
     end
     Commissioner->>Device: Request device attestation
-    Device-->>Commissioner: DAC, PAI, Certification Declaration, nonce signature
+    Device-->>Commissioner: DAC, Certification Declaration, nonce signature
     Commissioner->>Commissioner: Verify PAA chain and CSA certification data
 
     alt Attestation fails
