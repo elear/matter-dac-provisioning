@@ -19,12 +19,14 @@ sequenceDiagram
     alt Device requires DAC
         create participant DCL@{"type" : "database" }
         Commissioner->>DCL: Look up endpoint based on Manufacturer/Model Id
+        destroy DCL
         DCL->>Commissioner: URI
         Commissioner->>Device: Please start DAC commissioning
         loop
             Device->>Commissioner: {request-block1 of data}
             create participant Manufacturer@{"type" : "database" }
             Commissioner->>Manufacturer: POST/HTTP("request-block1")
+            destroy Manufacturer
             Manufacturer->>Commissioner: 200 ("response-block1")
             Commissioner-->Device: response-block1/PASE
         end
