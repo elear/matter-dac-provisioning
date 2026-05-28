@@ -35,7 +35,7 @@ sequenceDiagram
             Device->>Commissioner: Success
         else
             Device--xCommissioner: Fail
-            note over Device,Commissioner: stop here.
+            Commissioner-->>User: Reject device or request override
         end
     end
     Commissioner->>Device: Request device attestation
