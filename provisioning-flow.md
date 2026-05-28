@@ -16,7 +16,7 @@ sequenceDiagram
 
     Commissioner->>Device: Read device info and descriptors
     Device-->>Commissioner: Basic info, endpoints, clusters
-    rect beige
+    rect lightblue
     Note over Device,Commissioner: Device requires DAC
         create participant DCL@{"type" : "database" }
         Commissioner->>DCL: Look up endpoint based on Manufacturer/Model Id
