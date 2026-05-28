@@ -31,9 +31,9 @@ sequenceDiagram
             Commissioner-->Device: response-block1/PASE
         end
         alt DAC Provisioning Succeeds
-            Device->Commissioner: Success
+            Device->>Commissioner: Success
         else
-            Device->Commissioner: Fail
+            Device--xCommissioner: Fail
             note over Device,Commissioner: stop here.
         end
     end
